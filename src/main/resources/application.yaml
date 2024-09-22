@@ -1,0 +1,33 @@
+server:
+  port: 8181
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5437/couch_db
+    username: postgres
+    password: postgres
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: 'couch_service'
+
+  kafka:
+    # дареса всех брокеров кластера
+    bootstrap-servers: localhost:9092
+#    consumer:
+#      group-id: 1
+#      auto-offset-reset: earliest
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+
+    topics:
+      test-topic: topic1
+
+
+
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka/
